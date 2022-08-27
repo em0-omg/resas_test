@@ -1,13 +1,12 @@
 {
-  "roots": [
-    "<rootDir>/src"
-  ],
+  "roots": ["<rootDir>/src"],
   "testMatch": [
     "**/__tests__/**/*.+(ts|tsx|js)",
     "**/?(*.)+(spec|test).+(ts|tsx|js)"
   ],
   "transform": {
-    "^.+\\.(ts|tsx)$": "ts-jest"
+    "^.+\\.(ts|tsx)$": "ts-jest",
+    "^.+\\.(css|scss)$": "jest-transform-stub"
   },
   "globals": {
     "ts-jest": {
@@ -15,5 +14,8 @@
     }
   },
   "testEnvironment": "jest-environment-jsdom",
-  "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"]
+  "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
+  "moduleNameMapper": {
+    "\\.(css|scss)$": "<rootDir>/node_modules/jest-css-modules"
+  }
 }

@@ -25,3 +25,4 @@ dist-ssr
 src/stories
 .env.production
 .env.development
+memo.md
