@@ -1,9 +1,9 @@
-import React from 'react';
+import styles from './Header.module.css';
 
 const Header = () => {
   return (
     <header>
-      <h2>RESAS APP</h2>
+      <h2 className={styles.title}>RESAS APP</h2>
     </header>
   );
 };

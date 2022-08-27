@@ -1,11 +1,12 @@
-import {FC} from "react"
+import Header from './components/Header/Header';
 
-const App:FC = () => {
+const App = () => {
   return (
     <div>
-      <h2>resas_test</h2>
+      <Header />
+      <main></main>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
