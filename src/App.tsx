@@ -1,7 +1,10 @@
+import Header from './components/Header/Header';
+
 const App = () => {
   return (
     <div>
-      <h2>resas_test</h2>
+      <Header />
+      <main></main>
     </div>
   );
 };
