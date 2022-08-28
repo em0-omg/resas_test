@@ -1,10 +1,13 @@
 import Header from './components/Header/Header';
+import Prefectures from './components/Prefectures/Prefectures';
 
 const App = () => {
   return (
     <div>
       <Header />
-      <main></main>
+      <main>
+        <Prefectures />
+      </main>
     </div>
   );
 };

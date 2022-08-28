@@ -16,6 +16,9 @@
     "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.2.3",
+    "@tanstack/react-query-devtools": "^4.2.3",
+    "axios": "^0.27.2",
     "css-module-types": "^0.2.2",
     "firebase": "^9.9.3",
     "react": "^18.2.0",
@@ -35,6 +38,7 @@
     "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^28.1.8",
+    "@types/node": "^18.7.13",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
@@ -52,6 +56,7 @@
     "jest-transform-stub": "^2.0.0",
     "ts-jest": "^28.0.8",
     "typescript": "^4.6.4",
-    "vite": "^3.0.7"
+    "vite": "^3.0.7",
+    "vite-tsconfig-paths": "^3.5.0"
   }
 }
