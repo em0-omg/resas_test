@@ -1,6 +1,9 @@
 import { useSelector } from '@/store';
 import { ReactNode } from 'react';
 import Spinner from '@/components/Elements/Spinner/Spinner';
+import Header from '@/components/Header/Header';
+
+import styles from './Layout.module.scss';
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,7 +16,10 @@ const Layout = ({ children }: LayoutProps) => {
   if (isLoading) {
     return (
       <main>
-        <Spinner />
+        <Header />
+        <div className={styles.layout_container}>
+          <Spinner />
+        </div>
       </main>
     );
   }
@@ -21,13 +27,21 @@ const Layout = ({ children }: LayoutProps) => {
   if (isError) {
     return (
       <main>
-        <h2>Error</h2>
-        <p>{message}</p>
+        <Header />
+        <div className={styles.layout_container}>
+          <h2>Error</h2>
+          <p>{message}</p>
+        </div>
       </main>
     );
   }
 
-  return <main>{children}</main>;
+  return (
+    <main>
+      <Header />
+      <div className={styles.layout_container}>{children}</div>
+    </main>
+  );
 };
 
 export default Layout;
