@@ -16,13 +16,15 @@
     "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
     "@tanstack/react-query": "^4.2.3",
     "@tanstack/react-query-devtools": "^4.2.3",
     "axios": "^0.27.2",
     "css-module-types": "^0.2.2",
     "firebase": "^9.9.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
