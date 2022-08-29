@@ -1,6 +1,6 @@
-import Population from '@/components/Population/Population';
 import { AppProvider } from '@/providers/app';
 import Layout from '@/components/Layout/Layout';
+import PrefectureCheckboxes from '@/features/prefectures/components/PrefectureCheckboxes';
 
 import './App.scss';
 
@@ -8,7 +8,7 @@ const App = () => {
   return (
     <AppProvider>
       <Layout>
-        <Population />
+        <PrefectureCheckboxes />
       </Layout>
     </AppProvider>
   );

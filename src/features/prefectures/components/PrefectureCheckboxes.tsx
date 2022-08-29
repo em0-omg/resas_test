@@ -1,6 +1,9 @@
+import Checkbox from '@/components/Elements/Checkbox/Checkbox';
 import useQueryPrefectures from '@/hooks/useQueryPrefectures';
 
-const Prefectures = () => {
+import styles from './PrefectureCheckboxes.module.scss';
+
+const PrefectureCheckboxes = () => {
   const { status, data } = useQueryPrefectures();
 
   if (status === 'loading')
@@ -16,13 +19,12 @@ const Prefectures = () => {
       </div>
     );
   return (
-    <div>
-      <p>Prefectures</p>
+    <div className={styles.container}>
       {data?.map((prefecture) => (
-        <p key={prefecture.prefCode}>{prefecture.prefName}</p>
+        <Checkbox key={prefecture.prefCode} labelText={prefecture.prefName} />
       ))}
     </div>
   );
 };
 
-export default Prefectures;
+export default PrefectureCheckboxes;
