@@ -1,16 +1,14 @@
-import Header from './components/Header/Header';
-import Prefectures from './components/Prefectures/Prefectures';
-import Population from './components/Pupulation/Population';
+import Population from '@/components/Pupulation/Population';
+import { AppProvider } from '@/providers/app';
+import Layout from '@/components/Layout/Layout';
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <main>
-        {/* <Prefectures /> */}
+    <AppProvider>
+      <Layout>
         <Population />
-      </main>
-    </div>
+      </Layout>
+    </AppProvider>
   );
 };
 

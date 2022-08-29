@@ -1,8 +1,6 @@
-import { FC } from 'react';
-
 import useQueryPrefectures from '@/hooks/useQueryPrefectures';
 
-const Prefectures: FC = () => {
+const Prefectures = () => {
   const { status, data } = useQueryPrefectures();
 
   if (status === 'loading')
