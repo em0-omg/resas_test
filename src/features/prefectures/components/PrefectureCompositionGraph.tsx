@@ -22,7 +22,7 @@ const PrefectureCompositionGraph = () => {
   if (status === 'loading')
     return (
       <div>
-      <Spinner/>
+        <Spinner />
       </div>
     );
   if (status === 'error')
@@ -33,13 +33,13 @@ const PrefectureCompositionGraph = () => {
     );
 
   return (
-    <>
+    <div className={styles.container}>
       {data.data.map((d) => (
-        <div key={d.label} className={styles.container}>
+        <div key={d.label} className={styles.graph}>
           <h2 className={styles.title}>{d.label}</h2>
           <LineChart
-            width={isDesktop ? 600 : 320}
-            height={isDesktop ? 450 : 240}
+            width={isDesktop ? 400 : 320}
+            height={isDesktop ? 300 : 240}
             data={d.data}
             margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
           >
@@ -61,7 +61,7 @@ const PrefectureCompositionGraph = () => {
           </LineChart>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

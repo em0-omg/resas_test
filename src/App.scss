@@ -1,9 +1,11 @@
+@import '@/styles/variables.scss';
+
 html {
   font-size: 62.5%;
 }
 
 body {
-  color: #4b5563;
+  color: $text-color;
   font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
 }
