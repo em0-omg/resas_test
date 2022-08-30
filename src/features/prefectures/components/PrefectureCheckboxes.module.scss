@@ -1,6 +1,9 @@
 .container {
-  display: flex;
   width: 80%;
+}
+
+.checkboxes {
+  display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
