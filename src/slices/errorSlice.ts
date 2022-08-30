@@ -7,14 +7,16 @@ export const errorSlice = createSlice({
     message: '',
   },
   reducers: {
-    setIsError: (state, action) => {
-      state.isError = action.payload;
-    },
-    setErrorMessage: (state, action) => {
+    setError: (state, action) => {
       state.message = action.payload;
+      state.isError = true;
+    },
+    clearError: (state) => {
+      state.message = '';
+      state.isError = false;
     },
   },
 });
 
-export const { setIsError, setErrorMessage } = errorSlice.actions;
+export const { clearError, setError } = errorSlice.actions;
 export default errorSlice.reducer;

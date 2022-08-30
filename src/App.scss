@@ -5,14 +5,21 @@ html {
 }
 
 body {
-  color: $text-color;
+  color: $primary-color;
+  line-height: 1.625;
+  letter-spacing: 0.025em;
   font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
 }
 
 h2,
 h3,
-p {
+p,
+ul {
   margin-block-start: 0.4rem;
   margin-block-end: 0.4rem;
+}
+
+ul {
+  padding-inline-start: 0px;
 }
