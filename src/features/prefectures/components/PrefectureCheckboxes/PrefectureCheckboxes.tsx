@@ -4,11 +4,12 @@ import { useDispatch } from 'react-redux';
 import Checkbox from '@/components/Elements/Checkbox/Checkbox';
 import useQueryPrefectures from '@/hooks/useQueryPrefectures';
 
-import styles from './PrefectureCheckboxes.module.scss';
 import { useSelector } from '@/store';
 import { addPrefCode, removePrefCode } from '@/slices/prefecturesSlice';
-import PrefectureCheckboxNote from './PrefectureCheckboxNote';
+import PrefectureCheckboxNote from '@/features/prefectures/components/PrefectureCheckboxNote/PrefectureCheckboxNote';
 import Spinner from '@/components/Elements/Spinner/Spinner';
+
+import styles from './PrefectureCheckboxes.module.scss';
 
 const PrefectureCheckboxes = () => {
   const { status, data } = useQueryPrefectures();
@@ -30,7 +31,7 @@ const PrefectureCheckboxes = () => {
   if (status === 'loading')
     return (
       <div>
-      <Spinner/>
+        <Spinner />
       </div>
     );
   if (status === 'error')

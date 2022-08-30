@@ -1,7 +1,7 @@
 import { AppProvider } from '@/providers/app';
 import Layout from '@/components/Layout/Layout';
-import PrefectureCheckboxes from '@/features/prefectures/components/PrefectureCheckboxes';
-import PrefectureCompositionGraph from '@/features/prefectures/components/PrefectureCompositionGraph';
+import PrefectureCheckboxes from '@/features/prefectures/components/PrefectureCheckboxes/PrefectureCheckboxes';
+import PrefectureCompositionGraph from '@/features/prefectures/components/PrefectureCompositionGraph/PrefectureCompositionGraph';
 
 import './App.scss';
 
