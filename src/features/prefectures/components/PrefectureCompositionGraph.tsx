@@ -1,6 +1,7 @@
 import {
   CartesianGrid,
   Legend,
+  Label,
   Line,
   LineChart,
   Tooltip,
@@ -28,34 +29,35 @@ const PrefectureCompositionGraph = () => {
       </div>
     );
 
-  const totalData = data.data.find((pop) => pop.label === '総人口');
-
-  if (!totalData) {
-    return (
-      <div>
-        <span>Error</span>
-      </div>
-    );
-  }
-
-  console.log(data);
-
   return (
     <>
-      <h2 className={styles.title}>都道府県別の総人口構成グラフ</h2>
-      <LineChart
-        width={800}
-        height={400}
-        data={totalData.data}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="year" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="value" stroke="#82ca9d" />
-      </LineChart>
+      {data.data.map((d) => (
+        <div key={d.label} className={styles.container}>
+          <h2 className={styles.title}>{d.label}</h2>
+          <LineChart
+            width={1000}
+            height={400}
+            data={d.data}
+            margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="year">
+              <Label value="年" offset={0} position="bottom" />
+            </XAxis>
+            <YAxis
+              label={{ value: '人口数', angle: -90, position: 'insideLeft' }}
+            />
+            <Tooltip />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="value"
+              stroke="#82ca9d"
+              aria-label="人口数"
+            />
+          </LineChart>
+        </div>
+      ))}
     </>
   );
 };

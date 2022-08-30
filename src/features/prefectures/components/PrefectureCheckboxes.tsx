@@ -40,6 +40,7 @@ const PrefectureCheckboxes = () => {
     );
   return (
     <div className={styles.container}>
+      <PrefectureCheckboxNote />
       <div className={styles.checkboxes}>
         {data?.map((prefecture) => (
           <Checkbox
@@ -51,7 +52,6 @@ const PrefectureCheckboxes = () => {
           />
         ))}
       </div>
-      {!checkedPrefCodes.length ? <PrefectureCheckboxNote /> : null}
     </div>
   );
 };
