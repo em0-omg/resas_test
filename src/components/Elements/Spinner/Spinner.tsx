@@ -1,6 +1,7 @@
+import ReactLoading from "react-loading"
+
 const Spinner = () => {
-  // TODO: Spinnerの実装
-  return <span>Loading...</span>;
+  return <ReactLoading type="spin" color="#4b5563" height={'5%'} width={'5%'}/>
 };
 
 export default Spinner;

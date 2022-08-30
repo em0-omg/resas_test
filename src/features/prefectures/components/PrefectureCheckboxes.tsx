@@ -8,6 +8,7 @@ import styles from './PrefectureCheckboxes.module.scss';
 import { useSelector } from '@/store';
 import { addPrefCode, removePrefCode } from '@/slices/prefecturesSlice';
 import PrefectureCheckboxNote from './PrefectureCheckboxNote';
+import Spinner from '@/components/Elements/Spinner/Spinner';
 
 const PrefectureCheckboxes = () => {
   const { status, data } = useQueryPrefectures();
@@ -29,7 +30,7 @@ const PrefectureCheckboxes = () => {
   if (status === 'loading')
     return (
       <div>
-        <span>Loading...</span>
+      <Spinner/>
       </div>
     );
   if (status === 'error')

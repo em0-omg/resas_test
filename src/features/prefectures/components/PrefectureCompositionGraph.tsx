@@ -13,6 +13,7 @@ import useQueryPopulation from '@/hooks/useQueryPopulation';
 
 import styles from './PrefectureCompositionGraph.module.scss';
 import useResponsive from '@/hooks/useResponsive';
+import Spinner from '@/components/Elements/Spinner/Spinner';
 
 const PrefectureCompositionGraph = () => {
   const { isDesktop } = useResponsive();
@@ -21,7 +22,7 @@ const PrefectureCompositionGraph = () => {
   if (status === 'loading')
     return (
       <div>
-        <span>Loading...</span>
+      <Spinner/>
       </div>
     );
   if (status === 'error')
