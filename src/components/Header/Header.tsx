@@ -1,9 +1,9 @@
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 
 const Header = () => {
   return (
-    <header>
-      <h2 className={styles.title}>RESAS APP</h2>
+    <header className={styles.header_main}>
+      <h2 className={styles.header_title}>RESAS APP</h2>
     </header>
   );
 };

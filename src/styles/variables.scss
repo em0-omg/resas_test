@@ -1,0 +1,19 @@
+// mediaquery settings
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+);
+
+@mixin mq($size) {
+  @media screen and (max-width: #{map-get($breakpoints, $size)}) {
+    @content;
+  }
+}
+
+// color
+$text-color: #4b5563;
+
+// others
+$header-height: 6rem;

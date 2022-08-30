@@ -10,7 +10,7 @@
     "plugins": [
       {
         "name": "css-module-types"
-      }
+      },
     ],
     "allowJs": false,
     "skipLibCheck": true,
@@ -23,11 +23,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": [
+      "node"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+    },
   },
   "include": [
     "src",
-    "jest.setup.ts"
+    "jest.setup.ts",
+    "global.d.ts",
   ],
   "references": [
     {
