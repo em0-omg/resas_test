@@ -12,8 +12,10 @@ import {
 import useQueryPopulation from '@/hooks/useQueryPopulation';
 
 import styles from './PrefectureCompositionGraph.module.scss';
+import useResponsive from '@/hooks/useResponsive';
 
 const PrefectureCompositionGraph = () => {
+  const { isDesktop } = useResponsive();
   const { status, data } = useQueryPopulation();
 
   if (status === 'loading')
@@ -35,8 +37,8 @@ const PrefectureCompositionGraph = () => {
         <div key={d.label} className={styles.container}>
           <h2 className={styles.title}>{d.label}</h2>
           <LineChart
-            width={1000}
-            height={400}
+            width={isDesktop ? 800 : 320}
+            height={isDesktop ? 600 : 240}
             data={d.data}
             margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
           >

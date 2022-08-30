@@ -1,4 +1,4 @@
-declare module '*.css' {
+declare module '*.scss' {
   const exports: {
     [exportName: string]: string;
   };

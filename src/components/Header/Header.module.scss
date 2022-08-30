@@ -1,7 +1,9 @@
+@import '@/styles/variables.scss';
+
 .header_main {
   background-color: #1f2937;
   width: 100vw;
-  height: var(--header-height);
+  height: $header-height;
 }
 
 .header_title {
