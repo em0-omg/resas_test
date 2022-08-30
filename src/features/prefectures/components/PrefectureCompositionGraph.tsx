@@ -37,8 +37,8 @@ const PrefectureCompositionGraph = () => {
         <div key={d.label} className={styles.container}>
           <h2 className={styles.title}>{d.label}</h2>
           <LineChart
-            width={isDesktop ? 800 : 320}
-            height={isDesktop ? 600 : 240}
+            width={isDesktop ? 600 : 320}
+            height={isDesktop ? 450 : 240}
             data={d.data}
             margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
           >
