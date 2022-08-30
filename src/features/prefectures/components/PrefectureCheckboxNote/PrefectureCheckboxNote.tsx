@@ -2,7 +2,7 @@ import styles from './PrefectureCheckboxNote.module.scss';
 
 const PrefectureCheckboxNote = () => {
   return (
-    <div className={styles.container}>
+    <div id="page-top" className={styles.container}>
       <h3 className={styles.guide}>表示する都道府県を選択してください</h3>
       <ul className={styles.list}>
         <li className={styles.note}>
