@@ -1,0 +1,17 @@
+@import '@/styles/variables.scss';
+
+.container {
+  width: 80%;
+  padding-top: 2rem;
+
+  @include mq(md) {
+    width: 90%;
+  }
+}
+
+.checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}

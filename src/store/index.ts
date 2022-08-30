@@ -6,11 +6,13 @@ import {
 
 import loadingReducer from '@/slices/loadingSlice';
 import errorReducer from '@/slices/errorSlice';
+import prefecturesSlice from '@/slices/prefecturesSlice';
 
 export const store = configureStore({
   reducer: {
     loading: loadingReducer,
     error: errorReducer,
+    prefectures: prefecturesSlice,
   },
 });
 

@@ -16,6 +16,7 @@
   "testEnvironment": "jest-environment-jsdom",
   "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
   "moduleNameMapper": {
-    "\\.(css|scss)$": "<rootDir>/node_modules/jest-css-modules"
+    "\\.(css|scss)$": "<rootDir>/node_modules/jest-css-modules",
+    "^@/(.+)$": "<rootDir>/src/$1"
   }
 }

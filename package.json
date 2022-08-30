@@ -20,11 +20,13 @@
     "@tanstack/react-query": "^4.2.3",
     "@tanstack/react-query-devtools": "^4.2.3",
     "axios": "^0.27.2",
-    "css-module-types": "^0.2.2",
     "firebase": "^9.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.2"
+    "react-loading": "^2.0.3",
+    "react-redux": "^8.0.2",
+    "react-responsive": "^9.0.0-beta.10",
+    "recharts": "^2.1.13"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
@@ -47,6 +49,7 @@
     "@typescript-eslint/parser": "^5.35.1",
     "@vitejs/plugin-react": "^2.0.1",
     "babel-loader": "^8.2.5",
+    "css-module-types": "^0.2.2",
     "eslint": "^8.23.0",
     "eslint-plugin-jest": "^26.8.7",
     "eslint-plugin-jest-dom": "^4.0.2",
@@ -56,6 +59,8 @@
     "jest-css-modules": "^2.1.0",
     "jest-environment-jsdom": "^29.0.1",
     "jest-transform-stub": "^2.0.0",
+    "sass": "^1.54.5",
+    "sass-loader": "^13.0.2",
     "ts-jest": "^28.0.8",
     "typescript": "^4.6.4",
     "vite": "^3.0.7",
