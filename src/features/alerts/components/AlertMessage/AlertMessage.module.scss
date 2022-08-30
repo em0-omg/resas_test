@@ -1,0 +1,32 @@
+@import '@/styles/variables.scss';
+
+@mixin container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.show {
+  @include container;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: $error-color;
+  border-radius: 17px;
+}
+
+.hide {
+  @include container;
+  display: none;
+}
+
+.message {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  @include mq(md) {
+    font-size: 1.2rem;
+  }
+}

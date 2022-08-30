@@ -11,7 +11,6 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const { isLoading } = useSelector((state) => state.loading);
-  const { isError, message } = useSelector((state) => state.error);
 
   if (isLoading) {
     return (
@@ -19,18 +18,6 @@ const Layout = ({ children }: LayoutProps) => {
         <Header />
         <div className={styles.layout_container}>
           <Spinner />
-        </div>
-      </main>
-    );
-  }
-
-  if (isError) {
-    return (
-      <main>
-        <Header />
-        <div className={styles.layout_container}>
-          <h2>Error</h2>
-          <p>{message}</p>
         </div>
       </main>
     );

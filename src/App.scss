@@ -5,7 +5,9 @@ html {
 }
 
 body {
-  color: $text-color;
+  color: $primary-color;
+  line-height: 1.625;
+  letter-spacing: 0.025em;
   font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
 }

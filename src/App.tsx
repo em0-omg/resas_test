@@ -4,12 +4,14 @@ import PrefectureCheckboxes from '@/features/prefectures/components/PrefectureCh
 import PrefectureCompositionGraph from '@/features/prefectures/components/PrefectureCompositionGraph/PrefectureCompositionGraph';
 
 import './App.scss';
+import AlertMessage from '@/features/alerts/components/AlertMessage/AlertMessage';
 
 const App = () => {
   return (
     <AppProvider>
       <Layout>
         <PrefectureCheckboxes />
+        <AlertMessage />
         <PrefectureCompositionGraph />
       </Layout>
     </AppProvider>

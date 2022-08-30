@@ -8,6 +8,8 @@ import { useSelector } from '@/store';
 import { addPrefCode, removePrefCode } from '@/slices/prefecturesSlice';
 import PrefectureCheckboxNote from '@/features/prefectures/components/PrefectureCheckboxNote/PrefectureCheckboxNote';
 import Spinner from '@/components/Elements/Spinner/Spinner';
+import { setError, clearError } from '@/slices/errorSlice';
+import { ErrorMessages } from '@/assets/words/errors';
 
 import styles from './PrefectureCheckboxes.module.scss';
 
@@ -22,10 +24,16 @@ const PrefectureCheckboxes = () => {
     // 既に含まれている状態でのイベントの場合はチェックを外したと見なす
     if (checkedPrefCodes.includes(Number(e.target.value))) {
       dispatch(removePrefCode(Number(e.target.value)));
-      // 含まれていない状態でのイベントの場合はチェックを入れたと見なす
     } else {
+      // 含まれていない状態でのイベントの場合はチェックを入れたと見なす
+      // その際、10個以上すでにチェックされているか確認し、10個以上ならばエラーを吐いて終了
+      if (checkedPrefCodes.length >= 10) {
+        dispatch(setError(ErrorMessages.CHECK_PREF_LIMIT_ERROR));
+        return;
+      }
       dispatch(addPrefCode(Number(e.target.value)));
     }
+    dispatch(clearError());
   };
 
   if (status === 'loading')
@@ -34,12 +42,19 @@ const PrefectureCheckboxes = () => {
         <Spinner />
       </div>
     );
-  if (status === 'error')
+
+  if (status === 'error') {
+    dispatch(setError(ErrorMessages.GET_PREFECTURES_ERROR));
     return (
-      <div>
-        <span>Error</span>
+      <div className={styles.container}>
+        <PrefectureCheckboxNote />
       </div>
     );
+  }
+
+  // 無事に都道府県一覧を取得できた場合はエラーをクリア
+  dispatch(clearError());
+
   return (
     <div className={styles.container}>
       <PrefectureCheckboxNote />
