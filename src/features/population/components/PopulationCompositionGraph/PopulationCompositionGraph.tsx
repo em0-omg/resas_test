@@ -10,12 +10,12 @@ import {
 } from 'recharts';
 
 import useQueryPopulation from '@/hooks/useQueryPopulation';
-
-import styles from './PrefectureCompositionGraph.module.scss';
 import useResponsive from '@/hooks/useResponsive';
 import Spinner from '@/components/Elements/Spinner/Spinner';
 
-const PrefectureCompositionGraph = () => {
+import styles from './PopulationCompositionGraph.module.scss';
+
+const PopulationCompositionGraph = () => {
   const { isDesktop } = useResponsive();
   const { status, data } = useQueryPopulation();
 
@@ -65,4 +65,4 @@ const PrefectureCompositionGraph = () => {
   );
 };
 
-export default PrefectureCompositionGraph;
+export default PopulationCompositionGraph;

@@ -1,7 +1,7 @@
 import { AppProvider } from '@/providers/app';
 import Layout from '@/components/Layout/Layout';
 import PrefectureCheckboxes from '@/features/prefectures/components/PrefectureCheckboxes/PrefectureCheckboxes';
-import PrefectureCompositionGraph from '@/features/prefectures/components/PrefectureCompositionGraph/PrefectureCompositionGraph';
+import PopulationCompositionGraph from '@/features/population/components/PopulationCompositionGraph/PopulationCompositionGraph';
 
 import './App.scss';
 import AlertMessage from '@/features/alerts/components/AlertMessage/AlertMessage';
@@ -12,7 +12,7 @@ const App = () => {
       <Layout>
         <PrefectureCheckboxes />
         <AlertMessage />
-        <PrefectureCompositionGraph />
+        <PopulationCompositionGraph />
       </Layout>
     </AppProvider>
   );
