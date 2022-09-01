@@ -52,6 +52,7 @@
     "@typescript-eslint/parser": "^5.35.1",
     "@vitejs/plugin-react": "^2.0.1",
     "babel-loader": "^8.2.5",
+    "babel-plugin-transform-import-meta": "^2.2.0",
     "css-module-types": "^0.2.2",
     "eslint": "^8.23.0",
     "eslint-plugin-jest": "^26.8.7",
@@ -69,6 +70,7 @@
     "ts-jest": "^28.0.8",
     "typescript": "^4.6.4",
     "vite": "^3.0.7",
+    "vite-plugin-environment": "^1.1.2",
     "vite-tsconfig-paths": "^3.5.0"
   }
 }
