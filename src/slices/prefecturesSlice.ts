@@ -8,6 +8,8 @@ export const prefecturesSlice = createSlice({
   reducers: {
     addPrefCode: (state, action: PayloadAction<number>) => {
       state.checkedPrefCodes.push(action.payload);
+      // 念の為重複を削除
+      state.checkedPrefCodes = [...new Set(state.checkedPrefCodes)];
     },
     removePrefCode: (state, action: PayloadAction<number>) => {
       state.checkedPrefCodes = state.checkedPrefCodes.filter(

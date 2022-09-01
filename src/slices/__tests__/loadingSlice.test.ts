@@ -2,23 +2,22 @@ import loadingReducer from '../loadingSlice';
 import { setIsLoading } from '../loadingSlice';
 
 describe('loadingReducerのテスト', () => {
-  const initialStateNotLoading = {
+  let initialState = {
     isLoading: false,
-  };
-
-  const initialStateLoading = {
-    isLoading: true,
   };
 
   test('ローディング中に切り替わることの確認', () => {
     const action = { type: setIsLoading.type, payload: true };
-    const state = loadingReducer(initialStateNotLoading, action);
+    const state = loadingReducer(initialState, action);
     expect(state.isLoading).toBeTruthy();
   });
 
   test('ローディングが終了することの確認', () => {
+    initialState = {
+      isLoading: true,
+    };
     const action = { type: setIsLoading.type, payload: false };
-    const state = loadingReducer(initialStateLoading, action);
+    const state = loadingReducer(initialState, action);
     expect(state.isLoading).toBeFalsy();
   });
 });
