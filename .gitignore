@@ -26,3 +26,4 @@ src/stories
 .env.production
 .env.development
 memo.md
+coverage
