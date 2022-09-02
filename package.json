@@ -13,6 +13,7 @@
     "build-storybook": "build-storybook",
     "lint": "eslint src",
     "test": "jest --config ./jest.config.json",
+    "test:silent": "npm run test -- --silent",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage"
   },
@@ -47,6 +48,7 @@
     "@types/node": "^18.7.13",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@types/react-query": "^1.2.9",
     "@types/react-scroll": "^1.8.4",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
