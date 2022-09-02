@@ -7,18 +7,13 @@
   padding-right: 1.5rem;
 }
 
-.show {
+.error-box {
   @include container;
   display: flex;
   align-items: center;
   gap: 1rem;
   background-color: $error-color;
   border-radius: 17px;
-}
-
-.hide {
-  @include container;
-  display: none;
 }
 
 .message {

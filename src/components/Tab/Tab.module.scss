@@ -1,0 +1,34 @@
+@import '@/styles/variables.scss';
+
+.tab {
+  border: none;
+  background-color: white;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: $primary-color;
+
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.tab-selected {
+  @extend .tab;
+  border-bottom: 2px solid $secondary-color;
+  transform: scale(1.2);
+  transition: 1ms;
+}
+
+.label {
+  color: $secondary-color;
+}
+
+.label-selected {
+  color: $primary-color;
+}
+
+.note {
+  color: $secondary-color;
+  font-size: 1.2rem;
+  margin-left: 0.4rem;
+}

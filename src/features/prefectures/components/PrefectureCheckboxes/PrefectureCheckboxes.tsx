@@ -9,16 +9,22 @@ import { addPrefCode, removePrefCode } from '@/slices/prefecturesSlice';
 import PrefectureCheckboxNote from '@/features/prefectures/components/PrefectureCheckboxNote/PrefectureCheckboxNote';
 import Spinner from '@/components/Elements/Spinner/Spinner';
 import { setError, clearError } from '@/slices/errorSlice';
-import { ErrorMessages } from '@/assets/words/errors';
+import { ErrorMessages } from '@/assets/words';
 
 import styles from './PrefectureCheckboxes.module.scss';
+import { REGIONS } from '@/assets/region';
+import PrefectureRegionTabs from '../PrefectureRegionTabs/PrefectureRegionTabs';
 
 const PrefectureCheckboxes = () => {
+  const dispatch = useDispatch();
   const { status, data } = useQueryPrefectures();
   const checkedPrefCodes = useSelector(
     (state) => state.prefectures.checkedPrefCodes
   );
-  const dispatch = useDispatch();
+  const showTabIndex = useSelector((state) => state.tab.showIndex);
+
+  const showPrefectureCodes =
+    REGIONS.find((region) => region.tab === showTabIndex)?.prefCodes || [];
 
   const checkPrefecture = (e: ChangeEvent<HTMLInputElement>) => {
     // 既に含まれている状態でのイベントの場合はチェックを外したと見なす
@@ -58,16 +64,21 @@ const PrefectureCheckboxes = () => {
   return (
     <div className={styles.container}>
       <PrefectureCheckboxNote />
+      <PrefectureRegionTabs />
       <div className={styles.checkboxes}>
-        {data?.map((prefecture) => (
-          <Checkbox
-            key={prefecture.prefCode}
-            label={prefecture.prefName}
-            value={prefecture.prefCode}
-            onChange={checkPrefecture}
-            checked={checkedPrefCodes.includes(prefecture.prefCode)}
-          />
-        ))}
+        {data
+          ?.filter((prefecture) =>
+            showPrefectureCodes.includes(prefecture.prefCode)
+          )
+          .map((prefecture) => (
+            <Checkbox
+              key={prefecture.prefCode}
+              label={prefecture.prefName}
+              value={prefecture.prefCode}
+              onChange={checkPrefecture}
+              checked={checkedPrefCodes.includes(prefecture.prefCode)}
+            />
+          ))}
       </div>
     </div>
   );
