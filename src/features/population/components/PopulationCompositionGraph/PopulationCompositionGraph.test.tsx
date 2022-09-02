@@ -62,7 +62,6 @@ describe('人口構成グラフ描写のコンポーネントのテスト', () =
       </QueryClientProvider>
     );
 
-    // チェックボックスが描写されるのを待つ
     await waitFor(() => {
       screen.getAllByRole('heading');
     });

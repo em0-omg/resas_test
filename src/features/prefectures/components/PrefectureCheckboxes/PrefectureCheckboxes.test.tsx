@@ -44,7 +44,6 @@ describe('都道府県チェックボックスコンポーネントのテスト'
       </QueryClientProvider>
     );
 
-    // チェックボックスが描写されるのを待つ
     await waitFor(() => screen.findAllByRole('checkbox'));
 
     REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
@@ -67,7 +66,6 @@ describe('都道府県チェックボックスコンポーネントのテスト'
       </QueryClientProvider>
     );
 
-    // チェックボックスが描写されるのを待つ
     await waitFor(() => screen.findAllByRole('checkbox'));
 
     REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
@@ -90,7 +88,6 @@ describe('都道府県チェックボックスコンポーネントのテスト'
       </QueryClientProvider>
     );
 
-    // チェックボックスが描写されるのを待つ
     await waitFor(() => screen.findAllByRole('checkbox'));
 
     REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
@@ -113,7 +110,6 @@ describe('都道府県チェックボックスコンポーネントのテスト'
       </QueryClientProvider>
     );
 
-    // チェックボックスが描写されるのを待つ
     await waitFor(() => screen.findAllByRole('checkbox'));
 
     REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
@@ -136,7 +132,6 @@ describe('都道府県チェックボックスコンポーネントのテスト'
       </QueryClientProvider>
     );
 
-    // チェックボックスが描写されるのを待つ
     await waitFor(() => screen.findAllByRole('checkbox'));
 
     REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
@@ -159,7 +154,6 @@ describe('都道府県チェックボックスコンポーネントのテスト'
       </QueryClientProvider>
     );
 
-    // チェックボックスが描写されるのを待つ
     await waitFor(() => screen.findAllByRole('checkbox'));
 
     REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
@@ -182,7 +176,6 @@ describe('都道府県チェックボックスコンポーネントのテスト'
       </QueryClientProvider>
     );
 
-    // チェックボックスが描写されるのを待つ
     await waitFor(() => screen.findAllByRole('checkbox'));
 
     REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
@@ -204,7 +197,6 @@ describe('都道府県チェックボックスコンポーネントのテスト'
         </Provider>
       </QueryClientProvider>
     );
-    // チェックボックスが描写されるのを待つ
 
     await waitFor(() => screen.findAllByRole('checkbox'));
 
@@ -229,7 +221,6 @@ describe('都道府県チェックボックスコンポーネントのテスト'
       </QueryClientProvider>
     );
 
-    // チェックボックスが描写されるのを待つ
     await waitFor(() => screen.findAllByRole('checkbox'));
 
     const checkboxes_tab5 = screen.getAllByRole('checkbox');
@@ -241,7 +232,6 @@ describe('都道府県チェックボックスコンポーネントのテスト'
     index = 6;
     store.dispatch(setShowIndex(index));
 
-    // チェックボックスが描写されるのを待つ
     await waitFor(() => screen.findAllByRole('checkbox'));
 
     const checkboxes_tab6 = screen.getAllByRole('checkbox');
@@ -252,7 +242,7 @@ describe('都道府県チェックボックスコンポーネントのテスト'
 
     const { prefectures } = store.getState();
 
-    // 10個までしか選択できない
+    // 10個までしか選択できないことを確認する
     expect(prefectures.checkedPrefCodes).toEqual([
       31, 32, 33, 34, 35, 36, 37, 38, 39,
     ]);

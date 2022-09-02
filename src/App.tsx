@@ -10,9 +10,15 @@ const App = () => {
   return (
     <AppProvider>
       <Layout>
-        <PrefectureCheckboxes />
-        <ErrorMessage />
-        <PopulationCompositionGraph />
+        <section>
+          <PrefectureCheckboxes />
+        </section>
+        <section>
+          <ErrorMessage />
+        </section>
+        <section>
+          <PopulationCompositionGraph />
+        </section>
       </Layout>
     </AppProvider>
   );
