@@ -5,7 +5,7 @@ import prefecturesReducer, {
 
 describe('prefecturesReducerのテスト', () => {
   let initialState = {
-    checkedPrefCodes: [] as number[],
+    checkedPrefCodes: [1] as number[],
   };
 
   test('空の場合にprefCodeを追加する処理の確認', () => {
