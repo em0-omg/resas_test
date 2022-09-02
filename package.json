@@ -15,7 +15,8 @@
     "test": "jest --config ./jest.config.json",
     "test:silent": "npm run test -- --silent",
     "test:watch": "npm run test -- --watch",
-    "test:coverage": "npm run test -- --coverage"
+    "test:coverage": "npm run test -- --coverage",
+    "test:cicd": "npm run test -- --coverage --silent"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
@@ -61,7 +62,7 @@
     "eslint-plugin-jest-dom": "^4.0.2",
     "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-testing-library": "^5.6.0",
-    "jest": "^29.0.1",
+    "jest": "^28.0.1",
     "jest-css-modules": "^2.1.0",
     "jest-environment-jsdom": "^29.0.1",
     "jest-transform-stub": "^2.0.0",
