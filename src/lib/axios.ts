@@ -20,11 +20,6 @@ axios.interceptors.response.use(
     return response;
   },
   (error) => {
-    const message = error.response?.data?.message || error.message;
-    // TODO: グローバルステートでエラーメッセージを管理
-    // TODO: 後で消す
-    console.log(message);
-
     return Promise.reject(error);
   }
 );
