@@ -1,11 +1,11 @@
 import { rest } from 'msw';
 
-import { API_URL, GET_POPULATION_API_PATH } from '@/config';
+import { GET_POPULATION_API_PATH } from '@/config';
 
 export const populationHandler = [
   // TODO: reqのparamsに値がない場合は400
   // TODO: reqのparamsの値によって決まったres
-  rest.get(`${API_URL}/${GET_POPULATION_API_PATH}`, (req, res, ctx) => {
+  rest.get(`${GET_POPULATION_API_PATH}`, (req, res, ctx) => {
     try {
       return res(
         ctx.status(200),

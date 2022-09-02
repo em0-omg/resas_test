@@ -1,9 +1,9 @@
 import { rest } from 'msw';
 
-import { API_URL, GET_PREFECTURES_API_PATH } from '@/config';
+import { GET_PREFECTURES_API_PATH } from '@/config';
 
 export const prefecturesHandlers = [
-  rest.get(`${API_URL}/${GET_PREFECTURES_API_PATH}`, (req, res, ctx) => {
+  rest.get(`${GET_PREFECTURES_API_PATH}`, (req, res, ctx) => {
     try {
       return res(
         ctx.status(200),

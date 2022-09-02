@@ -1,18 +1,5 @@
-import { cleanup } from '@testing-library/react';
-import { server } from './server';
+import { setupServer } from 'msw/node';
 
-// mockサーバーを使用するテストのbeforeAllで使用する
-export const initMocks = () => {
-  server.listen();
-};
+import { handlers } from './handlers';
 
-// mockサーバーを使用するテストのafterEachで使用する
-export const resetMocks = () => {
-  server.resetHandlers();
-  cleanup();
-};
-
-// mockサーバーを使用するテストのafterAllで使用する
-export const closeMocks = () => {
-  server.close();
-};
+export const server = setupServer(...handlers);
