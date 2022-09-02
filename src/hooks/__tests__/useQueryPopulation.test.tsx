@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { renderHook } from '@testing-library/react-hooks';
 import { Provider } from 'react-redux';
-import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { server } from '@/test/server';
 import { populationData, populationDataMixed } from '@/assets/dummyData';
