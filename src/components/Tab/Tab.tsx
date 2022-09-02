@@ -7,14 +7,14 @@ import { useSelector } from '@/store';
 interface TabProps {
   label: string;
   tabIndex: number;
-  note: string;
+  note?: string;
   isContentsSelected?: boolean;
 }
 
 const Tab = ({
   label,
   tabIndex,
-  note,
+  note = '',
   isContentsSelected = false,
 }: TabProps) => {
   const dispatch = useDispatch();
