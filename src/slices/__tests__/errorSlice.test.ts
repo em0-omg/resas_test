@@ -1,5 +1,4 @@
-import errorReducer from '../errorSlice';
-import { setError, clearError } from '../errorSlice';
+import errorReducer, { setError, clearError } from '../errorSlice';
 
 describe('errorReducerのテスト', () => {
   let initialState = {

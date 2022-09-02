@@ -8,6 +8,8 @@ import { store } from '@/store';
 import { prefecturesData } from '@/assets/dummyData';
 import { setup } from '@/test/test-utils';
 import { clearCodes } from '@/slices/prefecturesSlice';
+import { setShowIndex } from '@/slices/tabSlice';
+import { REGIONS } from '@/assets/region';
 
 describe('都道府県チェックボックスコンポーネントのテスト', () => {
   beforeAll(() => {
@@ -31,7 +33,9 @@ describe('都道府県チェックボックスコンポーネントのテスト'
     },
   });
 
-  test('チェックボックスの生成', async () => {
+  test('チェックボックスの生成（東北）', async () => {
+    const index = 1;
+    store.dispatch(setShowIndex(index));
     render(
       <QueryClientProvider client={queryClient}>
         <Provider store={store}>
@@ -43,14 +47,156 @@ describe('都道府県チェックボックスコンポーネントのテスト'
     // チェックボックスが描写されるのを待つ
     await waitFor(() => screen.findAllByRole('checkbox'));
 
-    // 全ての都道府県が描写されていることの確認
-    const prefNames = prefecturesData.map((p) => p.prefName);
-    prefNames.forEach((prefName) => {
-      expect(screen.getByText(prefName)).toBeInTheDocument();
-    });
+    REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
+      (prefCode) => {
+        const pref = prefecturesData.find((pref) => pref.prefCode === prefCode);
+        expect(screen.getByText(pref?.prefName || 'error')).toBeInTheDocument();
+      }
+    );
+  });
+
+  test('チェックボックスの生成(関東)', async () => {
+    const index = 2;
+    store.dispatch(setShowIndex(index));
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
+          <PrefectureCheckboxes />
+        </Provider>
+      </QueryClientProvider>
+    );
+
+    // チェックボックスが描写されるのを待つ
+    await waitFor(() => screen.findAllByRole('checkbox'));
+
+    REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
+      (prefCode) => {
+        const pref = prefecturesData.find((pref) => pref.prefCode === prefCode);
+        expect(screen.getByText(pref?.prefName || 'error')).toBeInTheDocument();
+      }
+    );
+  });
+
+  test('チェックボックスの生成(中部)', async () => {
+    const index = 3;
+    store.dispatch(setShowIndex(index));
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
+          <PrefectureCheckboxes />
+        </Provider>
+      </QueryClientProvider>
+    );
+
+    // チェックボックスが描写されるのを待つ
+    await waitFor(() => screen.findAllByRole('checkbox'));
+
+    REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
+      (prefCode) => {
+        const pref = prefecturesData.find((pref) => pref.prefCode === prefCode);
+        expect(screen.getByText(pref?.prefName || 'error')).toBeInTheDocument();
+      }
+    );
+  });
+
+  test('チェックボックスの生成(近畿)', async () => {
+    const index = 4;
+    store.dispatch(setShowIndex(index));
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
+          <PrefectureCheckboxes />
+        </Provider>
+      </QueryClientProvider>
+    );
+
+    // チェックボックスが描写されるのを待つ
+    await waitFor(() => screen.findAllByRole('checkbox'));
+
+    REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
+      (prefCode) => {
+        const pref = prefecturesData.find((pref) => pref.prefCode === prefCode);
+        expect(screen.getByText(pref?.prefName || 'error')).toBeInTheDocument();
+      }
+    );
+  });
+
+  test('チェックボックスの生成(中国)', async () => {
+    const index = 5;
+    store.dispatch(setShowIndex(index));
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
+          <PrefectureCheckboxes />
+        </Provider>
+      </QueryClientProvider>
+    );
+
+    // チェックボックスが描写されるのを待つ
+    await waitFor(() => screen.findAllByRole('checkbox'));
+
+    REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
+      (prefCode) => {
+        const pref = prefecturesData.find((pref) => pref.prefCode === prefCode);
+        expect(screen.getByText(pref?.prefName || 'error')).toBeInTheDocument();
+      }
+    );
+  });
+
+  test('チェックボックスの生成(四国)', async () => {
+    const index = 5;
+    store.dispatch(setShowIndex(index));
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
+          <PrefectureCheckboxes />
+        </Provider>
+      </QueryClientProvider>
+    );
+
+    // チェックボックスが描写されるのを待つ
+    await waitFor(() => screen.findAllByRole('checkbox'));
+
+    REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
+      (prefCode) => {
+        const pref = prefecturesData.find((pref) => pref.prefCode === prefCode);
+        expect(screen.getByText(pref?.prefName || 'error')).toBeInTheDocument();
+      }
+    );
+  });
+
+  test('チェックボックスの生成(九州)', async () => {
+    const index = 6;
+    store.dispatch(setShowIndex(index));
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
+          <PrefectureCheckboxes />
+        </Provider>
+      </QueryClientProvider>
+    );
+
+    // チェックボックスが描写されるのを待つ
+    await waitFor(() => screen.findAllByRole('checkbox'));
+
+    REGIONS.find((region) => region.tab === index)?.prefCodes.forEach(
+      (prefCode) => {
+        const pref = prefecturesData.find((pref) => pref.prefCode === prefCode);
+        expect(screen.getByText(pref?.prefName || 'error')).toBeInTheDocument();
+      }
+    );
   });
 
   test('チェックボックスのチェック', async () => {
+    const index = 6;
+    store.dispatch(setShowIndex(index));
+
     const { user } = setup(
       <QueryClientProvider client={queryClient}>
         <Provider store={store}>
@@ -59,6 +205,7 @@ describe('都道府県チェックボックスコンポーネントのテスト'
       </QueryClientProvider>
     );
     // チェックボックスが描写されるのを待つ
+
     await waitFor(() => screen.findAllByRole('checkbox'));
 
     const checkboxes = screen.getAllByRole('checkbox');
@@ -68,9 +215,12 @@ describe('都道府県チェックボックスコンポーネントのテスト'
     // 2回チェックで一旦storeに入ったのち消える
     await user.dblClick(checkboxes[1]);
     const { prefectures } = store.getState();
-    expect(prefectures.checkedPrefCodes).toEqual([1]);
+    expect(prefectures.checkedPrefCodes).toEqual([36]);
   });
   test('チェックボックスを順に全てチェックしようとした時の挙動をテスト', async () => {
+    let index = 5;
+    store.dispatch(setShowIndex(index));
+
     const { user } = setup(
       <QueryClientProvider client={queryClient}>
         <Provider store={store}>
@@ -79,14 +229,24 @@ describe('都道府県チェックボックスコンポーネントのテスト'
       </QueryClientProvider>
     );
 
-    // storeを初期化しておく
+    // チェックボックスが描写されるのを待つ
+    await waitFor(() => screen.findAllByRole('checkbox'));
+
+    const checkboxes_tab5 = screen.getAllByRole('checkbox');
+
+    for (const checkbox of checkboxes_tab5) {
+      await user.click(checkbox);
+    }
+
+    index = 6;
+    store.dispatch(setShowIndex(index));
 
     // チェックボックスが描写されるのを待つ
     await waitFor(() => screen.findAllByRole('checkbox'));
 
-    const checkboxes = screen.getAllByRole('checkbox');
+    const checkboxes_tab6 = screen.getAllByRole('checkbox');
 
-    for (const checkbox of checkboxes) {
+    for (const checkbox of checkboxes_tab6) {
       await user.click(checkbox);
     }
 
@@ -94,7 +254,7 @@ describe('都道府県チェックボックスコンポーネントのテスト'
 
     // 10個までしか選択できない
     expect(prefectures.checkedPrefCodes).toEqual([
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+      31, 32, 33, 34, 35, 36, 37, 38, 39,
     ]);
   });
 });

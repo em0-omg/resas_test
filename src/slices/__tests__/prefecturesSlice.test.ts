@@ -1,9 +1,11 @@
-import prefecturesReducer from '../prefecturesSlice';
-import { addPrefCode, removePrefCode } from '../prefecturesSlice';
+import prefecturesReducer, {
+  addPrefCode,
+  removePrefCode,
+} from '../prefecturesSlice';
 
 describe('prefecturesReducerのテスト', () => {
   let initialState = {
-    checkedPrefCodes: [] as number[],
+    checkedPrefCodes: [1] as number[],
   };
 
   test('空の場合にprefCodeを追加する処理の確認', () => {

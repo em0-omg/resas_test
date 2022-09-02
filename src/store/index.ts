@@ -6,13 +6,15 @@ import {
 
 import loadingReducer from '@/slices/loadingSlice';
 import errorReducer from '@/slices/errorSlice';
-import prefecturesSlice from '@/slices/prefecturesSlice';
+import prefectureReducer from '@/slices/prefecturesSlice';
+import tabReducer from '@/slices/tabSlice';
 
 export const store = configureStore({
   reducer: {
     loading: loadingReducer,
     error: errorReducer,
-    prefectures: prefecturesSlice,
+    prefectures: prefectureReducer,
+    tab: tabReducer,
   },
 });
 
