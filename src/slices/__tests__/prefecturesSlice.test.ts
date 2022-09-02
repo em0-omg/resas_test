@@ -1,5 +1,7 @@
-import prefecturesReducer from '../prefecturesSlice';
-import { addPrefCode, removePrefCode } from '../prefecturesSlice';
+import prefecturesReducer, {
+  addPrefCode,
+  removePrefCode,
+} from '../prefecturesSlice';
 
 describe('prefecturesReducerのテスト', () => {
   let initialState = {

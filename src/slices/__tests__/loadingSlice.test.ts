@@ -1,5 +1,4 @@
-import loadingReducer from '../loadingSlice';
-import { setIsLoading } from '../loadingSlice';
+import loadingReducer, { setIsLoading } from '../loadingSlice';
 
 describe('loadingReducerのテスト', () => {
   let initialState = {
