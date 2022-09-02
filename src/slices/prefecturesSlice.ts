@@ -16,8 +16,12 @@ export const prefecturesSlice = createSlice({
         (prefCode) => prefCode !== action.payload
       );
     },
+    clearCodes: (state) => {
+      state.checkedPrefCodes = [];
+    },
   },
 });
 
-export const { addPrefCode, removePrefCode } = prefecturesSlice.actions;
+export const { addPrefCode, removePrefCode, clearCodes } =
+  prefecturesSlice.actions;
 export default prefecturesSlice.reducer;
