@@ -8,7 +8,7 @@ import {
   GetPopulationApiParameters,
 } from '@/types/types';
 import { useSelector } from '@/store';
-import { convertPrefCodes } from '@/features/prefectures/utils';
+import { convertPrefCodes } from '@/features/prefectures/utils/pref-utils';
 
 const getPopulation = async (params: GetPopulationApiParameters) => {
   const res = await axios.get<GetPopulationResponseData>(

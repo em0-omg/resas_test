@@ -9,7 +9,7 @@ import { addPrefCode, removePrefCode } from '@/slices/prefecturesSlice';
 import PrefectureCheckboxNote from '@/features/prefectures/components/PrefectureCheckboxNote/PrefectureCheckboxNote';
 import Spinner from '@/components/Elements/Spinner/Spinner';
 import { setError, clearError } from '@/slices/errorSlice';
-import { ErrorMessages } from '@/assets/words/errors';
+import { ErrorMessages } from '@/assets/words';
 
 import styles from './PrefectureCheckboxes.module.scss';
 
